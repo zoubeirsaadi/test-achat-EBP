@@ -42,7 +42,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 - Run the following command to run unit tests with Jest:
 
   ```bash
-  ng test
+  npm test
   ```
 
 ## Running end-to-end tests with Cypress
