@@ -2,6 +2,29 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.2.
 
+## First of all
+
+- Make sure you have Node.js and npm installed on your machine.
+
+- Clone this repository from GitHub:
+
+  ```bash
+  git clone https://github.com/zoubeirsaadi/test-achat-EBP
+
+  ```
+
+- Navigate to the project directory:
+
+  ```bash
+  cd test-achat-EBP
+
+  ```
+
+- Install the necessary dependencies by running the following command:
+  ```bash
+  npm install
+  ```
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
@@ -16,12 +39,17 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Run the following command to run unit tests with Jest:
 
-## Running end-to-end tests
+  ```bash
+  ng test
+  ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Running end-to-end tests with Cypress
 
-## Further help
+- Make sure the application is running with ng serve.
+- Run the following command to open Cypress:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+  ```bash
+  npx cypress open
+  ```

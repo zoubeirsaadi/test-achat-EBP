@@ -1,29 +1,43 @@
-import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
-  beforeEach(() => TestBed.configureTestingModule({
-    imports: [RouterTestingModule],
-    declarations: [AppComponent]
-  }));
+  let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [AppComponent]
+    })
+      .compileComponents();
   });
 
-  it(`should have as title 'test-achat-ebp'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('test-achat-ebp');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
     fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('test-achat-ebp app is running!');
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
+  it(`should have as title 'Test programme Achat'`, () => {
+    expect(component.title).toEqual('Test programme Achat');
+  });
+
+  it('should calculate remise and coupures correctly', () => {
+    // Simuler les données d'entrée
+    component.prix = 61;
+    component.sommePayee = 100;
+
+    // Appeler la fonction de calcul
+    component.calculerRemise();
+
+    // Vérifier le résultat
+    expect(component.remise).toBe(39);
+    expect(component.coupures).toEqual(['10 Euros', '10 Euros', '10 Euros', '1 Euros']);
   });
 });
+
+
